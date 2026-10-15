@@ -62,8 +62,14 @@ h1, h2, h3 { font-family: "Fredoka", sans-serif; line-height: 1.12; margin: 0; }
 .vsl { position: relative; width: 64%; max-width: 300px; margin: 0 auto; aspect-ratio: 406/728; border: 8px solid #1d2433; border-radius: 30px; overflow: hidden;
   box-shadow: 0 18px 40px rgba(0,0,0,.3); background: #1f2d5c; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .vsl video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.vsl .barra-v { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(0,0,0,.28); z-index: 3; }
-.vsl .barra-v i { display: block; height: 100%; width: 0; background: var(--cta2); transition: width .2s linear; }
+.vsl .barra-v { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: rgba(255,255,255,.45); box-shadow: 0 -1px 0 rgba(0,0,0,.12); z-index: 3; }
+.vsl .barra-v i { display: block; height: 100%; width: 0; background: var(--cta2); border-radius: 0 4px 4px 0; transition: width .2s linear; }
+/* pausa (Vini, 15/10/2026): depois do Ascolta, tocar no video pausa; o Riprendi continua de onde parou */
+.vsl .pausa { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; z-index: 5; background: rgba(15,20,40,.38); border: 0; padding: 0; cursor: pointer; width: 100%; }
+.vsl.pausado .pausa { display: flex; }
+.vsl .pausa b { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; width: 96px; height: 96px; border-radius: 50%; background: rgba(255,255,255,.95); box-shadow: 0 10px 30px -8px rgba(0,0,0,.6); }
+.vsl .pausa svg { width: 34px; height: 34px; fill: #1d2433; }
+.vsl .pausa span { font: 800 12px Nunito; color: #1d2433; letter-spacing: .03em; text-transform: uppercase; }
 .vsl .som { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 4; background: rgba(15,20,40,.28); transition: opacity .25s ease; border: 0; padding: 0; cursor: pointer; width: 100%; }
 .vsl.tocando .som { opacity: 0; pointer-events: none; }
 .vsl .som b { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; width: 96px; height: 96px; border-radius: 50%; background: rgba(255,255,255,.95); box-shadow: 0 10px 30px -8px rgba(0,0,0,.6); animation: pulsa 2.2s ease-in-out infinite; }
@@ -196,6 +202,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
       <video src="img/vsl-simples.mp4" poster="img/vsl-simples-poster.jpg" width="406" height="728" autoplay muted loop playsinline preload="metadata" aria-label="Video: Ricorda con Me dall'interno, in poco più di un minuto"></video>
       <div class="barra-v"><i></i></div>
       <button class="som" type="button" aria-label="Guarda il video con l'audio, dall'inizio"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6a8 8 0 0 1 0 12"/></svg><span>Ascolta</span></b></button>
+      <button class="pausa" type="button" aria-label="Riprendi il video"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><span>Riprendi</span></b></button>
     </div>
   </div>
   <a class="cta" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Voglio le 360 attività</a>
@@ -436,11 +443,16 @@ var PIXEL_ID = "1543859487541888";  // dataset "Recorda Comigo" (BM canarimtech)
     var v = box.querySelector("video");
     var fill = box.querySelector(".barra-v i");
     var botao = box.querySelector(".som");
+    var retomar = box.querySelector(".pausa");
     var somOn = false;
-    v.addEventListener("pause", function () { if (!v.ended) v.play().catch(function () {}); });
+    /* mudo em loop: se o navegador pausar sozinho, volta a tocar. Com som: quem pausa e a pessoa */
+    v.addEventListener("pause", function () { if (!somOn && !v.ended) v.play().catch(function () {}); });
+    v.addEventListener("play", function () { box.classList.remove("pausado"); });
+    v.addEventListener("click", function () { if (!somOn || v.paused) return; v.pause(); box.classList.add("pausado"); });
+    retomar.addEventListener("click", function () { box.classList.remove("pausado"); v.play().catch(function () {}); });
     v.addEventListener("contextmenu", function (e) { e.preventDefault(); });
     v.addEventListener("timeupdate", function () { if (v.duration) fill.style.width = (v.currentTime / v.duration * 100) + "%"; });
-    v.addEventListener("ended", function () { somOn = false; box.classList.remove("tocando"); v.muted = true; v.loop = true; v.currentTime = 0; v.play().catch(function () {}); });
+    v.addEventListener("ended", function () { somOn = false; box.classList.remove("tocando"); box.classList.remove("pausado"); v.muted = true; v.loop = true; v.currentTime = 0; v.play().catch(function () {}); });
     botao.addEventListener("click", function () {
       if (somOn) return;
       somOn = true;
