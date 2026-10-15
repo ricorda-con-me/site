@@ -412,8 +412,9 @@ var CHECKOUT = "https://pay.hotmart.com/D108046898M?checkoutMode=10";
   addEventListener("scroll", function () { barra.classList.toggle("on", scrollY > 600); }, { passive: true });
 })();
 
-/* Pixel del Meta: vuoto finché non c'è il dataset della Ricorda con Me (decisione da prendere: dataset nuovo, separato dal portoghese). */
-var PIXEL_ID = "";
+/* Pixel do Meta: o MESMO dataset da Recorda Comigo (decisao do Vini, 15/10/2026: "o nicho e o mesmo, a gente tem essa vantagem").
+   Carrega ao abrir a pagina, SEM aviso de cookies (decisao do Vini, 15/10/2026, igual a Portugal). Risco registado no log da oferta. */
+var PIXEL_ID = "1543859487541888";  // dataset "Recorda Comigo" (BM canarimtech)
 (function () {
   var pixel = false;
   function ligarPixel() {

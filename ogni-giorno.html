@@ -87,7 +87,10 @@ h1.tit{font:700 26px/1.15 Fredoka,Nunito,sans-serif;color:var(--escuro);margin:1
 <script>
 /* pixel: solo eventi propri, senza PageView (non si mescola con le visite della LP) */
 var PAGINA = "downsell";
-
+!function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+  if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+  s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+fbq("init", "1543859487541888");
 function ev(nome) { try { if (window.fbq) fbq("trackCustom", nome, { pagina: PAGINA }); } catch (x) {} }
 ev("VerUpsell");
 document.querySelectorAll("[data-clique]").forEach(function (a) { a.addEventListener("click", function () { ev("CliqueUpsell"); }); });
