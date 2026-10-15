@@ -57,10 +57,19 @@ h1, h2, h3 { font-family: "Fredoka", sans-serif; line-height: 1.12; margin: 0; }
 .hero h1 { font-size: 36px; margin: 14px 0 10px; color: var(--escuro); font-weight: 700; }
 .hero .sub { font-size: 18px; margin: 0 0 18px; }
 .mockup { position: relative; margin: 6px 0 20px; }
-/* o quadro do telemovel do hero: na Recorda leva a VSL; aqui, ate a VSL italiana existir, a tela do app */
-.vsl { position: relative; width: 64%; max-width: 300px; margin: 0 auto; aspect-ratio: 390/844; border: 8px solid #1d2433; border-radius: 30px; overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,.3); background: #1f2d5c; }
-.vsl img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+/* VSL do hero (padrao da Recorda e da 004): abre muda e em loop; o botao Ascolta reinicia do zero com som. Sem controlos. */
+.vsl { position: relative; width: 64%; max-width: 300px; margin: 0 auto; aspect-ratio: 406/728; border: 8px solid #1d2433; border-radius: 30px; overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,.3); background: #1f2d5c; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.vsl video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vsl .barra-v { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(0,0,0,.28); z-index: 3; }
+.vsl .barra-v i { display: block; height: 100%; width: 0; background: var(--cta2); transition: width .2s linear; }
+.vsl .som { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 4; background: rgba(15,20,40,.28); transition: opacity .25s ease; border: 0; padding: 0; cursor: pointer; width: 100%; }
+.vsl.tocando .som { opacity: 0; pointer-events: none; }
+.vsl .som b { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; width: 96px; height: 96px; border-radius: 50%; background: rgba(255,255,255,.95); box-shadow: 0 10px 30px -8px rgba(0,0,0,.6); animation: pulsa 2.2s ease-in-out infinite; }
+.vsl .som svg { width: 36px; height: 36px; fill: none; stroke: #1d2433; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vsl .som span { font: 800 12px Nunito; color: #1d2433; letter-spacing: .03em; text-transform: uppercase; }
+@keyframes pulsa { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .vsl .som b { animation: none; } }
 
 .garant-mini { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: 13.5px; color: var(--suave); font-weight: 800; margin: 10px 0 0; }
 
@@ -182,7 +191,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   <h1>I nostri anziani <span class="rosa">meritano di più</span> che passare le giornate davanti alla&nbsp;TV</h1>
   <p class="sub">Attività semplici, <b class="rosa">15 minuti al giorno</b>, che fanno lavorare la memoria e l'attenzione e riportano il sorriso di chi indovina. Sul cellulare o su carta, in famiglia o in RSA.</p>
   <div class="mockup">
-    <div class="vsl"><img width="780" height="1688" src="img/app-inicio.jpg" alt="L'app Ricorda con Me sul cellulare: gli 8 quaderni e le attività"></div>
+    <div class="vsl" data-vsl>
+      <video src="img/vsl-simples.mp4" poster="img/vsl-simples-poster.jpg" width="406" height="728" autoplay muted loop playsinline preload="metadata" aria-label="Video: Ricorda con Me dall'interno, in poco più di un minuto"></video>
+      <div class="barra-v"><i></i></div>
+      <button class="som" type="button" aria-label="Guarda il video con l'audio, dall'inizio"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6a8 8 0 0 1 0 12"/></svg><span>Ascolta</span></b></button>
+    </div>
   </div>
   <a class="cta" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Voglio le 360 attività</a>
   <p class="garant-mini"><span>✓ Accesso immediato</span><span>✓ Pagamento unico</span><span>✓ 15 giorni per provarlo</span></p>
@@ -412,6 +425,31 @@ var PIXEL_ID = "";
   }
   ligarPixel();
   document.querySelectorAll("a.cta").forEach(function (a) { a.addEventListener("click", function () { if (pixel && window.fbq) fbq("trackCustom", "CliqueComprar", { pacote: "essenziale" }); }); });
+})();
+</script>
+<script>
+/* VSL do hero, padrao da Recorda e da 004: abre muda em loop, sem controlos; Ascolta reinicia do zero com som e toca uma vez ate ao fim. */
+(function () {
+  document.querySelectorAll("[data-vsl]").forEach(function (box) {
+    var v = box.querySelector("video");
+    var fill = box.querySelector(".barra-v i");
+    var botao = box.querySelector(".som");
+    var somOn = false;
+    v.addEventListener("pause", function () { if (!v.ended) v.play().catch(function () {}); });
+    v.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+    v.addEventListener("timeupdate", function () { if (v.duration) fill.style.width = (v.currentTime / v.duration * 100) + "%"; });
+    v.addEventListener("ended", function () { somOn = false; box.classList.remove("tocando"); v.muted = true; v.loop = true; v.currentTime = 0; v.play().catch(function () {}); });
+    botao.addEventListener("click", function () {
+      if (somOn) return;
+      somOn = true;
+      box.classList.add("tocando");
+      v.loop = false;
+      v.muted = false;
+      v.currentTime = 0;
+      v.play().catch(function () { v.muted = true; v.loop = true; somOn = false; box.classList.remove("tocando"); v.play().catch(function () {}); });
+      if (window.fbq) { try { fbq("trackCustom", "VSLOuvir"); } catch (e) {} }
+    });
+  });
 })();
 </script>
 </body>
