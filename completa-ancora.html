@@ -70,11 +70,15 @@ h1.tit{font:700 26px/1.15 Fredoka,Nunito,sans-serif;color:var(--escuro);margin:1
 .sub{color:var(--suave);margin:0 0 6px}
 .lista-i{list-style:none;padding:0;margin:14px 0 0;text-align:left}.lista-i li{display:flex;gap:10px;align-items:flex-start;margin:0 0 9px;font-size:15.5px}
 .lista-i li b{color:var(--escuro)}.lista-i li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--verde);color:#fff;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+/* mockup de celular (15/10/2026, pedido do Vini: "aquele mockup que parece um celular"): mesma moldura da VSL da LP; o app real, mudo e em loop */
+.cel{position:relative;width:64%;max-width:280px;margin:16px auto 4px;aspect-ratio:9/16;border:8px solid #1d2433;border-radius:30px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.3);background:#fffaf4}
+.cel video{width:100%;height:100%;object-fit:cover;display:block}
 </style></head><body>
 <main>
 <div class="ok" data-fluxo hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Pagamento confermato: Ogni Giorno è pronto</span></div>
 <div class="ok" data-fora hidden><span>Ricorda con Me</span></div>
 <h1 class="tit">Manca poco<br><em>per avere tutto</em></h1><p class="sub">Aggiungi il corpo, le memorie, la fede e i 5 bonus che ha solo il Completo.</p>
+<div class="cel"><video src="img/mock-completoplus.mp4" poster="img/mock-completoplus.jpg" width="540" height="960" autoplay muted loop playsinline preload="metadata" aria-label="Corpo attivo, Memorie dell'epoca e Fede e tradizioni aperti sul cellulare"></video></div>
 <ul class="lista-i"><li><span><b>Corpo attivo</b>: routine di 10 minuti da fare da seduti</span></li><li><span><b>Memorie dell'epoca</b> e <b>Fede e tradizioni</b>: domande, crucipuzzle e conversazioni</span></li><li><span><b>5 bonus esclusivi</b>: 12 sessioni di gruppo, Feste dell'anno, Musiche dell'epoca, Il libro della mia vita, Diplomi</span></li></ul>
 <div class="acao" data-acao>
 <a class="bt" data-checkout="https://pay.hotmart.com/Y108047263K?off=cs4x71aj" href="https://pay.hotmart.com/Y108047263K?off=cs4x71aj" data-clique><b>Sì, voglio il Completo</b><span>Solo <em>9,90 €</em>: il Completo costa 34,90 €, tu paghi la differenza</span></a>
