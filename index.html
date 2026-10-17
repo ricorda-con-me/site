@@ -407,6 +407,19 @@ var CHECKOUT = "https://pay.hotmart.com/D108046898M?checkoutMode=10";
   if (CHECKOUT) {
     /* La Hotmart conserva solo src e sck: src = id dell'annuncio, sck = id della campagna (dal utm_content e dal utm_campaign). */
     var p = new URLSearchParams(location.search);
+    /* Chi torna senza UTM (cronologia, digitando l'indirizzo, profilo) porta al checkout l'ultimo annuncio da cui era
+       arrivato, per 7 giorni (come lo script del painel). Solo UTM e id, il fbclid vecchio no. Aggiunto il 17/10/2026. */
+    var ORIGINE = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "ad_id", "campaign_id"];
+    try {
+      if (ORIGINE.some(function (k) { return p.get(k); })) {
+        var salva = {};
+        ORIGINE.forEach(function (k) { if (p.get(k)) salva[k] = p.get(k).slice(0, 500); });
+        localStorage.setItem("rcm_origine", JSON.stringify({ q: salva, em: Date.now() }));
+      } else {
+        var s = JSON.parse(localStorage.getItem("rcm_origine") || "null");
+        if (s && s.q && Date.now() - s.em < 7 * 864e5) Object.keys(s.q).forEach(function (k) { if (!p.get(k)) p.set(k, s.q[k]); });
+      }
+    } catch (e) {}
     var soId = function (v) { var m = String(v || "").match(/\d{12,}/g); return m ? m[m.length - 1] : ""; };
     var ad = soId(p.get("utm_content")) || soId(p.get("ad_id"));
     var camp = soId(p.get("utm_campaign")) || soId(p.get("campaign_id"));
