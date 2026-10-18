@@ -5,14 +5,14 @@
 <meta name="facebook-domain-verification" content="ysa7vw4ggqlz9qgx6x13ypy2mtj19q" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ricorda con Me · 360 attività per tenere la mente attiva</title>
-<meta name="description" content="360 attività di stimolazione cognitiva da fare sul cellulare o da stampare. Memoria, attenzione e ragionamento, 15 minuti al giorno.">
+<meta name="description" content="Più di un anno di attività di stimolazione cognitiva per chi fa animazione in RSA e per chi assiste a casa: ogni gioco ha tre livelli, sul cellulare o da stampare.">
 <meta name="theme-color" content="#1f2d5c">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <!-- ENDERECO: GitHub Pages da org ricorda-con-me (15/10/2026). Trocar os links absolutos abaixo quando houver dominio. -->
 <meta property="og:title" content="Ricorda con Me · 360 attività per tenere la mente attiva">
-<meta property="og:description" content="Attività semplici, 15 minuti al giorno, sul cellulare o in PDF da stampare.">
+<meta property="og:description" content="Più di un anno di attività già pronte: ogni gioco ha tre livelli, sul cellulare o da stampare.">
 <meta property="og:image" content="https://ricordaconme.online/img/capa-geral.jpg">
 <meta property="og:url" content="https://ricordaconme.online/">
 <meta property="og:type" content="product">
@@ -198,6 +198,41 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   background: #1a1a1a; box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); z-index: 6; pointer-events: none; }
 .fone .vsl { width: 100%; max-width: none; margin: 0; border: 0; border-radius: 0; box-shadow: none; }
 @media (max-height: 700px) { .fone { width: min(205px, 54vw); } }
+
+/* 18/10/2026: pagina nova na ordem DOR, CAUSA, 3 LIVELLI, USO, PROVA, PER CHI, PACOTE, GARANZIA, PREZZO, EXTRA (copy do agente copy, aprovada pelo Vini) */
+.cenas2 { display: flex; flex-direction: column; gap: 12px; margin: 18px 0 16px; }
+.cena2 { display: flex; gap: 14px; align-items: flex-start; background: var(--escuro2); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 14px; }
+.cena2 img { width: 46px; height: 46px; flex: none; background: rgba(255,255,255,.1); border-radius: 12px; padding: 4px; }
+.cena2 b { font: 700 18px Fredoka; display: block; color: #fff; margin-bottom: 2px; } .cena2 p { margin: 0; font-size: 16.5px; }
+.escuro .fecho-dor { font-weight: 800; color: #fff; margin-bottom: 0; }
+.rosado h3.liv { font-size: 24px; color: var(--escuro); margin: 22px 0 8px; }
+.livelli { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0 4px; }
+.livelli img { border-radius: 8px; box-shadow: 0 6px 16px rgba(0,0,0,.14); background: #fff; }
+.livelli-leg { text-align: center; font-size: 14px; color: var(--suave); font-weight: 800; margin: 6px 0 0; }
+.lado { display: grid; gap: 10px; margin-top: 14px; }
+.lado .card-ok { margin-top: 0; }
+.uso p { margin: 0 0 12px; }
+.capas2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; }
+.capa-l { font-size: 13.5px; color: var(--suave); margin: 7px 2px 0; line-height: 1.35; } .capa-l b { color: var(--escuro); }
+.rosado h3.bon { font-size: 24px; color: var(--escuro); margin: 28px 0 4px; text-align: center; }
+.rosado .intro { text-align: center; color: var(--suave); margin: 0 0 16px; }
+.depois { font: 700 19px Fredoka; color: var(--escuro); margin: 14px 0 14px; }
+.extras { background: #f2f0f8; padding: 40px 0; }
+.extras .cab { text-align: center; } .extras h2 { font-size: 27px; color: var(--escuro); margin: 10px 0 8px; }
+.extras .intro { text-align: center; color: var(--suave); margin: 0 0 18px; }
+.extras .chapeu { color: #4d3f8f; background: #e6e0f6; }
+.ex { display: flex; gap: 14px; align-items: center; background: #fff; border-radius: 18px; padding: 12px; box-shadow: 0 4px 14px rgba(31,45,92,.07); margin-bottom: 12px; }
+.ex img { width: 76px; border: 4px solid #1d2433; border-radius: 12px; flex: none; }
+.ex .tag { display: inline-block; font: 800 11px Nunito; letter-spacing: .06em; color: #4d3f8f; background: #ebe6f7; border-radius: 12px; padding: 2px 8px; margin-bottom: 4px; }
+.ex h3 { font-size: 18px; color: var(--escuro); } .ex p { margin: 2px 0 0; font-size: 15px; color: var(--suave); }
+/* as telas de celular sao mais altas que as folhas: estreitas, para o carrossel nao deixar buraco embaixo das folhas */
+.carrossel figure.tl { flex-basis: 47%; }
+/* galeria em esteira (Vini, 18/10/2026: "ir lentamente para o lado, fica mais profissional"): anda sozinha, para ao toque,
+   continua arrastavel com o dedo e com o mouse; sem snap, que brigaria com o movimento */
+.carrossel.esteira { scroll-snap-type: none; cursor: grab; }
+.carrossel.esteira.arrastando { cursor: grabbing; user-select: none; }
+.carrossel.esteira img { -webkit-user-drag: none; user-select: none; pointer-events: none; }
+.fecho { padding: 36px 0 28px; text-align: center; } .fecho p { font: 700 22px Fredoka; color: var(--escuro); margin: 0 0 16px; }
 </style>
 <!-- visite del painel (funil-montar, rastreio-e-capi 2.6): lega la vendita alla visita con lo xcod della Hotmart -->
 <script async src="https://painel.labofertas.com/api/lp/script?o=2026-10-ricorda-con-me"></script>
@@ -208,8 +243,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
 <!-- 1. HERO -->
 <header class="w topo hero">
   <div class="logo"><img width="256" height="256" src="img/icone.png" alt="">Ricorda <span class="me">con Me</span></div><br>
-  <span class="pilula">360 ATTIVITÀ • 8 QUADERNI + 5 BONUS</span>
-  <h1>Fai animazione in RSA o in casa di riposo? Hai attività <span class="rosa">pronte per&nbsp;mesi</span>.</h1>
+  <span class="pilula">STIMOLAZIONE COGNITIVA · 360 ATTIVITÀ</span>
+  <h1>Fai animazione in RSA o in casa di riposo? Hai <span class="rosa">più di un anno di attività</span> già pronte.</h1>
   <p class="sub">Si usano sul cellulare o su carta, anche al centro diurno o a casa con mamma o papà. E <b class="rosa">ogni gioco ha tre livelli</b>, così al tavolo partecipano tutti, ognuno al suo ritmo.</p>
   <div class="mockup">
     <div class="fone"><div class="tela"><span class="ilha" aria-hidden="true"></span><div class="vsl" data-vsl>
@@ -223,102 +258,68 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   <p class="garant-mini"><span>✓ Accesso immediato</span><span>✓ Pagamento unico</span><span>✓ 15 giorni per provarlo</span></p>
 </header>
 
-<!-- 1b. FASCIA DEI BENEFICI -->
-<section class="w">
-  <div class="faixa">
-    <div class="fb"><div class="ic"><img width="256" height="256" loading="lazy" decoding="async" src="img/infinito.png" alt=""></div><div><b>Pagamento unico</b><span>Paghi una volta sola, nessun abbonamento.</span></div></div>
-    <div class="fb"><div class="ic"><img width="256" height="256" loading="lazy" decoding="async" src="img/coracao.png" alt=""></div><div><b>Pensato per la famiglia e per chi assiste</b><span>Semplice, sicuro e facile da usare.</span></div></div>
-    <div class="grade4">
-      <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/email.png" alt=""><b>Accesso immediato</b><span>Subito dopo il pagamento</span></div>
-      <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/telemovel.png" alt=""><b>Sul cellulare</b><span>Tocchi e l'attività si corregge da sola</span></div>
-      <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/impressora.png" alt=""><b>Da stampare</b><span>Tutte le volte che vuoi, in A4</span></div>
-      <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/relogio.png" alt=""><b>Al tuo ritmo</b><span>Quando e dove vuoi</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 2. DOLORE + BENEFICI -->
+<!-- 2. IL DOLORE, IN SALA E A CASA -->
 <section class="escuro">
   <div class="w">
-    <span class="chapeu">STIMOLAZIONE COGNITIVA</span>
-    <h2>Perché allenare la mente <span class="dour">fa tanta differenza?</span></h2>
-    <p>La giornata passa davanti alla TV. I nomi tardano a venire, le parole sfuggono e la voglia di fare è sempre meno. Chi se ne prende cura vuole aiutare, ma tra il lavoro e mille cose non sempre sa cosa proporre.</p>
-    <p><b>Con attività semplici, pochi minuti al giorno, puoi aiutare a:</b></p>
-    <div class="lista-esc">
-      <div class="le"><img width="256" height="256" loading="lazy" decoding="async" src="img/cerebro.png" alt="">Allenare la memoria</div>
-      <div class="le"><img width="256" height="256" loading="lazy" decoding="async" src="img/lupa.png" alt="">Esercitare l'attenzione e la concentrazione</div>
-      <div class="le"><img width="256" height="256" loading="lazy" decoding="async" src="img/estrela.png" alt="">Riempire il tempo con qualcosa che dà soddisfazione</div>
-      <div class="le"><img width="256" height="256" loading="lazy" decoding="async" src="img/trofeu.png" alt="">Rafforzare l'autostima e la fiducia</div>
-      <div class="le"><img width="256" height="256" loading="lazy" decoding="async" src="img/cafe.png" alt="">Avere un momento di chiacchiere e compagnia</div>
+    <span class="chapeu">IN SALA E A CASA</span>
+    <h2>C'è chi finisce in due minuti e chi <span class="dour">non sa da dove cominciare</span>.</h2>
+    <div class="cenas2">
+      <div class="cena2"><img width="256" height="256" loading="lazy" decoding="async" src="img/cuidadora.png" alt=""><div><b>In sala</b><p>Con venti, trenta ospiti, ognuno ha i suoi tempi. Chi ha già finito si annoia, chi è ancora alla prima domanda si blocca e lascia perdere. E chi conduce corre da un tavolo all'altro, mentre metà del gruppo aspetta.</p></div></div>
+      <div class="cena2"><img width="256" height="256" loading="lazy" decoding="async" src="img/familia.png" alt=""><div><b>A casa</b><p>C'è chi passa il pomeriggio a guardare il muro, e ogni proposta cade nel vuoto. A un certo punto sembra che nessuna attività sia possibile.</p></div></div>
     </div>
+    <p class="fecho-dor">E inventarsi ogni giorno qualcosa di nuovo, cercare le schede, adattarle a ognuno? Non c'è nemmeno il tempo.</p>
   </div>
 </section>
 
-<!-- 3. METODO / QUADERNI -->
+<!-- 3. LA CAUSA E LA SOLUZIONE: TRE LIVELLI -->
 <section class="rosado">
   <div class="w">
-    <span class="chapeu">IL METODO IN 8 QUADERNI</span>
-    <h2>Il metodo Ricorda con Me: 8 quaderni di stimolazione cognitiva, dal livello facile a quello di sfida</h2>
-    <p>Ogni quaderno allena una capacità, con attività che salgono di livello piano piano: dal Livello 1, per cominciare, al Livello 3, di sfida.</p>
-    <p class="rotulo">GLI 8 QUADERNI DEL METODO</p>
-    <div class="capas">
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-memoria.jpg" alt="Quaderno Memoria"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-attenzione.jpg" alt="Quaderno Attenzione e concentrazione"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-linguaggio.jpg" alt="Quaderno Linguaggio e parole"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-ragionamento.jpg" alt="Quaderno Ragionamento e logica"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-percezione.jpg" alt="Quaderno Percezione visiva"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-orientamento.jpg" alt="Quaderno Orientamento nel tempo e nello spazio"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-conti.jpg" alt="Quaderno I conti di tutti i giorni"><span class="n">45 attività</span></div>
-      <div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-coordinazione.jpg" alt="Quaderno Coordinazione e tratto"><span class="n">45 attività</span></div>
+    <span class="chapeu">PERCHÉ SUCCEDE</span>
+    <h2>Spesso il problema è la scheda: o sembra fatta per l'asilo, o è troppo difficile.</h2>
+    <p>Una scheda uguale per tutti non va bene per nessuno: a chi va veloce sembra una presa in giro, chi va piano si scoraggia e la mette da parte. Non dipende da chi gioca, né da chi propone il gioco.</p>
+    <h3 class="liv">Per questo in Ricorda con Me <span class="rosa">ogni gioco ha tre livelli</span></h3>
+    <p>Lo stesso crucipuzzle, lo stesso labirinto, lo stesso conto della spesa: dal Livello 1, per cominciare, al Livello 3, per chi ama le sfide.</p>
+    <div class="livelli">
+      <img width="480" height="581" loading="lazy" decoding="async" src="img/livello-1.jpg" alt="Labirinto, Livello 1">
+      <img width="480" height="581" loading="lazy" decoding="async" src="img/livello-2.jpg" alt="Lo stesso labirinto, Livello 2">
+      <img width="480" height="581" loading="lazy" decoding="async" src="img/livello-3.jpg" alt="Lo stesso labirinto, Livello 3">
     </div>
-    <div class="card-ok"><span class="v">✓</span><div><b>Soluzioni incluse in tutti i quaderni.</b> Sul cellulare l'attività si corregge subito. Su carta le soluzioni sono in fondo a ogni quaderno, per finire sempre con la soddisfazione di aver indovinato.</div></div>
+    <p class="livelli-leg">Lo stesso labirinto, nei tre livelli</p>
+    <div class="lado">
+      <div class="card-ok"><span class="v">✓</span><div><b>In sala.</b> Tutti fanno lo stesso gioco, ognuno al suo livello. Chi finisce in fretta trova la sua sfida, chi ci mette di più non resta a guardare, e alla fine si corregge insieme, ad alta voce. Così giocano tutti, e tu non corri più da un tavolo all'altro.</div></div>
+      <div class="card-ok"><span class="v">✓</span><div><b>A casa.</b> Si comincia dal livello giusto e si sale quando diventa facile. E al posto del muro, c'è il gioco del giorno.</div></div>
+    </div>
   </div>
 </section>
 
-<!-- 4. ESCLUSIVO: L'APP -->
+<!-- 4. COME SI USA: SUL CELLULARE O SU CARTA -->
 <section class="rosado" style="padding-top: 0">
   <div class="w">
     <div class="app-bloco">
-      <span class="chapeu">📱 SUL CELLULARE</span>
+      <span class="chapeu">📱 SUL CELLULARE O SU CARTA</span>
       <h3>Fallo sul cellulare o stampalo: scegli tu</h3>
-      <p>Le 360 attività si aprono sul cellulare come un'app. Tocchi la lettera, la risposta o il puntino, e l'attività <b>si corregge da sola e alla fine festeggia</b>.</p>
-      <div class="telas"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-sopa.jpg" alt="Crucipuzzle sul cellulare"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-relogio.jpg" alt="Orologio sul cellulare"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-festa.jpg" alt="Attività completata"></div>
-      <ul class="checks">
-        <li>Senza stampante, cominci il giorno stesso</li>
-        <li>Caratteri grandi e pulsanti facili da toccare</li>
-        <li>Ogni attività anche in PDF, da stampare</li>
-      </ul>
-      <div class="pills"><span>Su cellulare e tablet</span><span class="v">+ PDF da stampare</span></div>
+      <div class="telas"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-sopa.jpg" alt="Crucipuzzle sul cellulare"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-relogio.jpg" alt="Orologi sul cellulare"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-festa.jpg" alt="Attività completata"></div>
+      <div class="uso">
+        <p><b>Sul cellulare o sul tablet.</b> Si apre come un'app. Si tocca la lettera, la risposta o il puntino, e il gioco <b>si corregge da solo</b>: chi sbaglia riprova senza che nessuno glielo faccia notare, e alla fine si festeggia. Caratteri grandi, pulsanti facili da toccare, e non serve la stampante: si comincia il giorno stesso.</p>
+        <p><b>Su carta.</b> Ogni attività ha il suo PDF in A4. Lo stampi quante volte vuoi, per una persona o per tutto il gruppo, e le soluzioni sono in fondo a ogni quaderno.</p>
+      </div>
     </div>
     <div style="margin-top: 22px"><a class="cta verde" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Comincio oggi stesso</a><p class="seguro">🔒 Pagamento sicuro · Accesso subito dopo l'acquisto</p></div>
   </div>
 </section>
 
-<!-- 5. BONUS -->
+<!-- 5. PROVA: LE ATTIVITÀ VERE -->
 <section class="secao">
   <div class="w">
-    <h2>Inclusi nel kit: <span class="sub-cinco">cinque</span> bonus</h2>
-    <p class="intro">Materiali extra per la famiglia e per chi lavora con gli anziani.</p>
-    <div class="bonus-g">
-      <div class="bg"><div class="img"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-crucipuzzle-italia.jpg" alt="Scheda del bonus: Crucipuzzle d'Italia"></div><div class="tx"><p class="num">BONUS 01</p><h3>Crucipuzzle d'Italia</h3><p>Città, cucina italiana, feste e tradizioni: 8 crucipuzzle con i temi di casa nostra.</p></div></div>
-      <div class="bg"><div class="img"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-proverbi.jpg" alt="Scheda del bonus: Proverbi da completare"></div><div class="tx"><p class="num">BONUS 02</p><h3>Proverbi da completare</h3><p>I proverbi di sempre, da completare e da raccontare. Con le soluzioni in fondo.</p></div></div>
-      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-schede-assistenza.jpg" alt="Scheda del bonus: Schede di assistenza"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 03</p><h3>Schede di assistenza</h3><p>Le attenzioni della settimana, i contatti di emergenza e la scheda della salute da portare alle visite.</p></div></div>
-      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-registro-attivita.jpg" alt="Scheda del bonus: Scheda di registro delle attività"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 04</p><h3>Scheda di registro delle attività</h3><p>Chi ha fatto cosa, a che livello e com'è andata, per ogni persona e per ogni sessione di gruppo. Utile anche per il PAI.</p></div></div>
-      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-guida-gruppo.jpg" alt="Scheda del bonus: Come usare le schede con un gruppo"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 05</p><h3>Come usare le schede con un gruppo</h3><p>I passi per fare le schede con tutto il gruppo, anche con livelli diversi: ognuno al suo livello.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. ESEMPI -->
-<section class="rosado">
-  <div class="w">
-    <h2 style="text-align:center">Guarda come sono le attività: semplici, chiare e pronte all'uso</h2>
-    <p style="text-align:center">Ogni scheda è pensata per leggerla senza fatica: caratteri grandi, istruzioni dirette e illustrazioni colorate.</p>
-    <div class="carrossel" tabindex="0" role="region" aria-label="Esempi di attività, scorri per vederne altre">
-      <figure><img width="794" height="1124" src="img/folha-linguaggio-1.jpg" alt="Esempio di attività: Crucipuzzle"><figcaption>Crucipuzzle</figcaption></figure>
+    <p style="text-align:center;margin:0"><span class="chapeu">GUARDA LE ATTIVITÀ</span></p>
+    <h2 style="margin-top:12px">Niente roba da bambini</h2>
+    <p class="intro">Sono giochi da grandi, con i temi di casa nostra. Nessuno si sente trattato da bambino, e ci si mette a giocare subito: caratteri grandi e istruzioni brevi.</p>
+    <div class="carrossel esteira" tabindex="0" role="region" aria-label="Esempi di attività, scorri per vederne altre">
+      <figure><img width="794" height="1123" src="img/folha-conti-2.jpg" alt="Esempio di attività: La spesa, in euro"><figcaption>La spesa, in euro</figcaption></figure>
+      <figure><img width="794" height="1123" src="img/folha-linguaggio-2.jpg" alt="Esempio di attività: Proverbi"><figcaption>Proverbi</figcaption></figure>
+      <figure><img width="794" height="1124" loading="lazy" decoding="async" src="img/folha-orientamento-1.jpg" alt="Esempio di attività: Che ore sono?"><figcaption>Che ore sono?</figcaption></figure>
+      <figure><img width="794" height="1124" loading="lazy" decoding="async" src="img/folha-linguaggio-1.jpg" alt="Esempio di attività: Crucipuzzle"><figcaption>Crucipuzzle</figcaption></figure>
       <figure class="tl"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-sopa.jpg" alt="Esempio di attività: lo stesso crucipuzzle, sul cellulare"><figcaption>Lo stesso crucipuzzle, sul cellulare</figcaption></figure>
-      <figure><img width="794" height="1124" src="img/folha-orientamento-1.jpg" alt="Esempio di attività: Che ore sono?"><figcaption>Che ore sono?</figcaption></figure>
-      <figure><img width="794" height="1123" loading="lazy" decoding="async" src="img/folha-conti-2.jpg" alt="Esempio di attività: La spesa, in euro"><figcaption>La spesa, in euro</figcaption></figure>
       <figure><img width="794" height="1123" loading="lazy" decoding="async" src="img/folha-ragionamento-2.jpg" alt="Esempio di attività: Sudoku"><figcaption>Sudoku</figcaption></figure>
       <figure><img width="794" height="1123" loading="lazy" decoding="async" src="img/folha-memoria-2.jpg" alt="Esempio di attività: Ricordare le immagini"><figcaption>Ricordare le immagini</figcaption></figure>
       <figure class="tl"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-relogio.jpg" alt="Esempio di attività: Orologi, sul cellulare"><figcaption>Orologi, sul cellulare</figcaption></figure>
@@ -328,22 +329,57 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
       <figure><img width="794" height="1123" loading="lazy" decoding="async" src="img/folha-coordinazione-2.jpg" alt="Esempio di attività: Unisci i puntini"><figcaption>Unisci i puntini</figcaption></figure>
       <figure><img width="794" height="1123" loading="lazy" decoding="async" src="img/folha-orientamento-2.jpg" alt="Esempio di attività: Il calendario"><figcaption>Il calendario</figcaption></figure>
       <figure><img width="794" height="1124" loading="lazy" decoding="async" src="img/folha-orientamento-3.jpg" alt="Esempio di attività: Battaglia navale"><figcaption>Battaglia navale</figcaption></figure>
-      <figure><img width="794" height="1123" loading="lazy" decoding="async" src="img/folha-linguaggio-2.jpg" alt="Esempio di attività: Proverbi"><figcaption>Proverbi</figcaption></figure>
       <figure class="tl"><img width="780" height="1688" loading="lazy" decoding="async" src="img/app-festa.jpg" alt="Esempio di attività: alla fine, si festeggia"><figcaption>Alla fine, si festeggia</figcaption></figure>
     </div>
     <p class="dica-arr">‹ scorri per vederne altre ›</p>
   </div>
 </section>
 
-<!-- 7. PER CHI E' -->
-<section class="secao">
+<!-- 6. PER CHI È, E PER CHI NON È -->
+<section class="secao" style="padding-top: 8px">
   <div class="w">
     <h2>Per chi è Ricorda con Me</h2>
-    <p class="intro">Da fare a casa, insieme, o da usare al lavoro.</p>
+    <p class="intro">Da usare al lavoro, con un gruppo, o a casa, con una persona sola.</p>
     <div class="quem">
-      <div class="qm"><img width="256" height="256" loading="lazy" decoding="async" src="img/familia.png" alt=""><div><b>Figli e nipoti che si prendono cura</b><span>Un'attività pronta per ogni giorno, senza perdere tempo a cercare o inventare.</span></div></div>
-      <div class="qm"><img width="256" height="256" loading="lazy" decoding="async" src="img/cuidadora.png" alt=""><div><b>OSS, animatrici ed educatrici</b><span>Schede pronte per gli ospiti della RSA, del centro diurno o dell'assistenza a domicilio, anche con gruppi di livelli diversi.</span></div></div>
-      <div class="qm"><img width="256" height="256" loading="lazy" decoding="async" src="img/avo.png" alt=""><div><b>Chi vuole tenere la mente attiva</b><span>I Livelli 2 e 3 sono una bella sfida, anche senza problemi di memoria.</span></div></div>
+      <div class="qm"><img width="256" height="256" loading="lazy" decoding="async" src="img/cuidadora.png" alt=""><div><b>Animatrici, educatrici e OSS</b><span>Attività pronte per gli ospiti della RSA, della casa di riposo o del centro diurno, anche quando al tavolo i livelli sono molto diversi. Con la guida per il gruppo e il registro delle attività, utile anche per il PAI.</span></div></div>
+      <div class="qm"><img width="256" height="256" loading="lazy" decoding="async" src="img/familia.png" alt=""><div><b>Chi si prende cura di un anziano a casa</b><span>Figli, nipoti, badanti: un gioco pronto per ogni giorno, senza perdere tempo a cercare o inventare.</span></div></div>
+      <div class="qm"><img width="256" height="256" loading="lazy" decoding="async" src="img/avo.png" alt=""><div><b>Chi vuole tenere la mente attiva</b><span>I Livelli 2 e 3 sono una bella sfida, anche per chi non ha problemi di memoria.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. COSA RICEVI -->
+<section class="rosado">
+  <div class="w">
+    <span class="chapeu">COSA RICEVI</span>
+    <h2>360 attività in 8 quaderni: <span class="rosa">ce n'è per più di un anno</span></h2>
+    <p>Ogni quaderno allena una capacità diversa e ha 45 attività. In ognuno, ogni gioco ha tre livelli, e le soluzioni sono sempre incluse.</p>
+    <div class="capas2">
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-memoria.jpg" alt="Quaderno Memoria"><span class="n">45 attività</span></div><p class="capa-l"><b>Memoria:</b> liste di parole, immagini da ricordare e coppie uguali.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-attenzione.jpg" alt="Quaderno Attenzione e concentrazione"><span class="n">45 attività</span></div><p class="capa-l"><b>Attenzione e concentrazione:</b> simboli da barrare, quello diverso da trovare, immagini da contare.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-linguaggio.jpg" alt="Quaderno Linguaggio e parole"><span class="n">45 attività</span></div><p class="capa-l"><b>Linguaggio e parole:</b> crucipuzzle, proverbi, lettere mancanti e lettere mescolate.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-ragionamento.jpg" alt="Quaderno Ragionamento e logica"><span class="n">45 attività</span></div><p class="capa-l"><b>Ragionamento e logica:</b> sequenze di numeri, sudoku e l'intruso.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-percezione.jpg" alt="Quaderno Percezione visiva"><span class="n">45 attività</span></div><p class="capa-l"><b>Percezione visiva:</b> forme uguali da scoprire e disegni da copiare sulla quadrettatura.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-orientamento.jpg" alt="Quaderno Orientamento nel tempo e nello spazio"><span class="n">45 attività</span></div><p class="capa-l"><b>Orientamento nel tempo e nello spazio:</b> orologi, calendari e battaglia navale.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-conti.jpg" alt="Quaderno I conti di tutti i giorni"><span class="n">45 attività</span></div><p class="capa-l"><b>I conti di tutti i giorni:</b> operazioni, la spesa e le monete, tutto in euro.</p></div>
+      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-coordinazione.jpg" alt="Quaderno Coordinazione e tratto"><span class="n">45 attività</span></div><p class="capa-l"><b>Coordinazione e tratto:</b> labirinti e puntini da unire.</p></div>
+    </div>
+    <h3 class="bon">E nel kit ci sono anche <span class="sub-cinco">cinque</span> bonus</h3>
+    <p class="intro">Per chi lavora con un gruppo e per chi assiste a casa.</p>
+    <div class="bonus-g">
+      <div class="bg"><div class="img"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-guida-gruppo.jpg" alt="Scheda del bonus: Come usare le schede con un gruppo"></div><div class="tx"><p class="num">BONUS 01</p><h3>Come usare le schede con un gruppo</h3><p>I passi per preparare una sessione da 30 a 45 minuti con quello che c'è nel kit, anche con livelli diversi. E come adattarla a chi ci vede poco, a chi ha le mani che tremano o a chi non vuole partecipare.</p></div></div>
+      <div class="bg"><div class="img"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-registro-attivita.jpg" alt="Scheda del bonus: Scheda di registro delle attività"></div><div class="tx"><p class="num">BONUS 02</p><h3>Scheda di registro delle attività</h3><p>Un foglio per ogni persona e uno per ogni sessione di gruppo: chi ha fatto cosa, a che livello e com'è andata. Utile anche per aggiornare il PAI.</p></div></div>
+      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-crucipuzzle-italia.jpg" alt="Scheda del bonus: Crucipuzzle d'Italia"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 03</p><h3>Crucipuzzle d'Italia</h3><p>Città, cucina italiana, feste e tradizioni: 8 crucipuzzle con i temi di casa nostra.</p></div></div>
+      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-proverbi.jpg" alt="Scheda del bonus: Proverbi da completare"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 04</p><h3>Proverbi da completare</h3><p>I proverbi di sempre, da completare e da raccontare. Con le soluzioni in fondo.</p></div></div>
+      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-schede-assistenza.jpg" alt="Scheda del bonus: Schede di assistenza"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 05</p><h3>Schede di assistenza</h3><p>Le attenzioni di ogni giorno, i contatti di emergenza e la scheda della salute da portare alle visite.</p></div></div>
+    </div>
+    <div class="faixa">
+      <div class="grade4">
+        <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/infinito.png" alt=""><b>Pagamento unico</b><span>Paghi una volta sola, nessun abbonamento</span></div>
+        <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/email.png" alt=""><b>Accesso immediato</b><span>Subito dopo il pagamento</span></div>
+        <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/telemovel.png" alt=""><b>Sul cellulare e su carta</b><span>Si corregge da solo, o si stampa in A4</span></div>
+        <div class="g4"><img width="256" height="256" loading="lazy" decoding="async" src="img/relogio.png" alt=""><b>Al tuo ritmo</b><span>Quando e dove vuoi</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -353,9 +389,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
 <!-- 8. GARANZIA -->
 <section class="garantia">
   <div class="w">
-    <div class="selo-g">PER PROVARLO<b>15</b>GIORNI</div>
+    <div class="selo-g">PROVALO PER<b>15</b>GIORNI</div>
     <h2>Soddisfatti o rimborsati</h2>
-    <p>Hai 15 giorni per provarlo. Se non ti piace, per qualsiasi motivo, ti restituiamo tutti i soldi, senza domande.</p>
+    <p>Hai 15 giorni per provarlo, con il gruppo o a casa. Se non ti convince, per qualsiasi motivo, ti restituiamo tutti i soldi, senza fare domande.</p>
   </div>
 </section>
 
@@ -364,17 +400,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   <div class="w">
     <div class="faixa-rosa">PAGAMENTO UNICO<small>NESSUN ABBONAMENTO · ACCESSO SUBITO</small></div>
     <div class="card-preco">
-      <p class="ancora">Un libro di esercizi di stimolazione cognitiva può costare più di 20 € in libreria. Con Ricorda con Me hai gli 8 quaderni, sul cellulare e in PDF, più i 5 bonus:</p>
+      <p class="ancora">In libreria, un solo libro di esercizi di stimolazione cognitiva può costare più di 20&nbsp;€. Con Ricorda con Me hai 360 attività in 8 quaderni, sul cellulare e da stampare, più 5 bonus:</p>
       <p style="margin:0;font-weight:800">a soli</p>
       <p class="valor">14,90 €</p>
       <p class="unico">IVA inclusa · pagamento unico, nessun abbonamento</p>
       <ul class="checks">
-        <li>360 attività sul cellulare e in PDF</li>
-        <li>8 quaderni con le soluzioni</li>
-        <li>5 bonus per chi assiste</li>
-        <li>Nessun abbonamento</li>
+        <li>Più di un anno di attività già pronte</li>
+        <li>Ogni gioco ha tre livelli, soluzioni comprese</li>
+        <li>Sul cellulare come un'app, o da stampare quante volte vuoi</li>
+        <li>5 bonus, tra cui la guida per il gruppo e il registro delle attività</li>
         <li>15 giorni per provarlo</li>
       </ul>
+      <p class="depois">E da domani, al tavolo, ognuno ha già il suo gioco.</p>
       <a class="cta verde" href="https://pay.hotmart.com/D108046898M?checkoutMode=10" data-checkout>Sì, voglio tutto il kit</a>
       <div class="selos"><span>🔒 Pagamento sicuro</span><span>✓ Accesso immediato</span><span>🛡️ 15 giorni per provarlo</span></div>
       <p class="metodos">Pagamento con carta o PayPal</p>
@@ -382,20 +419,40 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   </div>
 </section>
 
-<!-- 10. FAQ -->
+<!-- 10. EXTRA FACOLTATIVI NEL PAGAMENTO (i 3 order bump della Hotmart, 9,90 € l'uno, non selezionati) -->
+<section class="extras">
+  <div class="w">
+    <div class="cab"><span class="chapeu">FACOLTATIVI</span><h2>Tre extra, solo se ti servono</h2></div>
+    <p class="intro">Il kit è completo così. Nella pagina di pagamento trovi anche tre extra da 9,90&nbsp;€ l'uno. Non sono inclusi nel kit e non sono già selezionati: li aggiungi tu, con una spunta, solo se vuoi.</p>
+    <div class="ex"><img width="540" height="960" loading="lazy" decoding="async" src="img/mock-piano.jpg" alt="Piano di 90 giorni sul cellulare"><div><span class="tag">FACOLTATIVO</span><h3>Piano di 90 giorni</h3><p>Le attività di ogni giorno, già scelte tra quelle degli 8 quaderni: basta aprire e cominciare. Ogni 30 giorni si sale di livello, e i giorni completati restano segnati sul calendario. Anche in PDF.</p></div></div>
+    <div class="ex"><img width="540" height="960" loading="lazy" decoding="async" src="img/mock-memorie.jpg" alt="Memorie dell'epoca sul cellulare"><div><span class="tag">FACOLTATIVO</span><h3>Memorie dell'epoca</h3><p>10 serie di domande «Chi si ricorda?», 12 crucipuzzle a tema e 40 cartoncini di conversazione: Sanremo, la lira, la scuola di una volta, i giochi di strada, i mestieri. Per tirare fuori i ricordi e chiacchierare.</p></div></div>
+    <div class="ex"><img width="540" height="960" loading="lazy" decoding="async" src="img/mock-fede.jpg" alt="Fede e tradizioni sul cellulare"><div><span class="tag">FACOLTATIVO</span><h3>Fede e tradizioni</h3><p>6 serie di domande sui santi e sulle feste dell'anno, 6 crucipuzzle e 24 cartoncini di conversazione: la Prima Comunione, la festa del patrono, il Natale in famiglia.</p></div></div>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
 <section class="faq">
   <div class="w">
     <h2>Domande frequenti</h2>
+    <details><summary>Funziona con un gruppo dai livelli diversi?</summary><p>Sì. Ogni gioco ha tre livelli: tutti fanno lo stesso gioco, ognuno al suo livello. Il bonus «Come usare le schede con un gruppo» spiega come preparare la sessione, passo per passo, e come adattarla a chi ne ha bisogno.</p></details>
+    <details><summary>Posso usarlo con gli ospiti della RSA o del centro diurno?</summary><p>Sì. Puoi stampare le schede tutte le volte che servono per le persone che segui, in RSA, al centro diurno o a domicilio. Non è permesso rivenderle né condividere l'accesso.</p></details>
+    <details><summary>Chi può guidare le attività?</summary><p>L'animatrice, l'educatrice, l'OSS, la badante o un familiare. Le istruzioni sono brevi e ogni attività dice cosa fare.</p></details>
     <details><summary>Come ricevo il kit?</summary><p>Subito dopo il pagamento ricevi il link di accesso. Si apre sul cellulare, sul tablet o sul computer.</p></details>
     <details><summary>Posso stampare tutte le volte che voglio?</summary><p>Sì. Ogni attività e ogni quaderno hanno il PDF pronto da stampare in formato A4, tutte le volte che vuoi.</p></details>
-    <details><summary>Mia madre non sa usare il cellulare. Va bene lo stesso?</summary><p>Sì. I pulsanti sono grandi e basta toccare. E se preferisce la carta, ogni attività ha il PDF da stampare.</p></details>
+    <details><summary>Che cosa sono gli extra nella pagina di pagamento?</summary><p>Sono tre aggiunte facoltative, da 9,90&nbsp;€ l'una: il Piano di 90 giorni, Memorie dell'epoca e Fede e tradizioni. Non fanno parte del kit e non sono già selezionate: le aggiungi solo se vuoi. Il kit è completo anche senza.</p></details>
+    <details><summary>C'è un abbonamento?</summary><p>No. Il kit si paga una volta sola: nessun rinnovo e nessun addebito mensile.</p></details>
     <details><summary>Serve internet?</summary><p>Per aprire le attività sul cellulare e per scaricare i PDF, sì. Una volta scaricati, i PDF funzionano anche senza internet.</p></details>
-    <details><summary>Chi può guidare le attività?</summary><p>Un familiare, la badante, l'OSS o l'educatrice. Le istruzioni sono brevi e ogni attività dice cosa fare.</p></details>
-    <details><summary>Posso usarlo con gli ospiti della RSA o del centro diurno?</summary><p>Sì. Puoi stampare le schede tutte le volte che servono per le persone che segui, in RSA, al centro diurno o a domicilio. Non è permesso rivenderle né condividere l'accesso.</p></details>
-    <details><summary>Funziona con un gruppo di livelli diversi?</summary><p>Sì. Ogni quaderno ha 3 livelli: tutti fanno lo stesso tema, ognuno al suo livello. Il bonus «Come usare le schede con un gruppo» spiega come organizzare la sessione.</p></details>
-    <details><summary>Va bene per chi ha l'Alzheimer o la demenza?</summary><p>Le attività sono un passatempo per allenare la mente e si adattano al ritmo di ogni persona: basta cominciare dal Livello 1. Non sostituiscono il parere del medico. Se hai dubbi, parlane con il medico di famiglia.</p></details>
+    <details><summary>Mia madre non sa usare il cellulare. Va bene lo stesso?</summary><p>Sì. I pulsanti sono grandi e basta toccare. E se preferisce la carta, ogni attività ha il PDF da stampare.</p></details>
+    <details><summary>Va bene per chi ha l'Alzheimer o la demenza?</summary><p>Le attività sono un passatempo per allenare la mente e si adattano al ritmo di ogni persona: basta cominciare dal Livello 1. Non sono una terapia e non sostituiscono il parere del medico. Se hai dubbi, parlane con il medico di famiglia.</p></details>
     <details><summary>Va bene per chi non ha problemi di memoria?</summary><p>Sì. I Livelli 2 e 3 sono una bella sfida per chi vuole tenere la mente attiva.</p></details>
-    <details><summary>C'è un abbonamento?</summary><p>No. Paghi una volta sola e non c'è nient'altro da pagare.</p></details>
+  </div>
+</section>
+
+<!-- 11b. FECHO -->
+<section class="fecho">
+  <div class="w">
+    <p>Il gioco di oggi è già pronto. E anche quello di domani.</p>
+    <a class="cta" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Voglio le attività pronte</a>
   </div>
 </section>
 
@@ -493,5 +550,36 @@ var PIXEL_ID = "1543859487541888";  // dataset "Recorda Comigo" (BM canarimtech)
   });
 })();
 </script>
-</body>
+<script>
+/* Galeria em esteira (18/10/2026): anda devagar sozinha e em loop sem emenda (os itens se repetem no fim), so quando esta
+   visivel; para ao toque, ao passar o mouse ou ao arrastar, e volta depois de uns segundos. Sem movimento para quem pediu
+   reduzir movimento no aparelho. No computador, arrasta com o mouse. */
+(function () {
+  var el = document.querySelector(".carrossel.esteira"); if (!el) return;
+  var calma = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  Array.prototype.slice.call(el.children).forEach(function (f) {
+    var c = f.cloneNode(true); c.setAttribute("aria-hidden", "true");
+    c.querySelectorAll("img").forEach(function (i) { i.alt = ""; }); el.appendChild(c);
+  });
+  var meio = function () { return el.scrollWidth / 2; };
+  var parado = false, volta = 0, visivel = false, pos = 0, ant = 0, arr = null;
+  function pausa(ms) { parado = true; clearTimeout(volta); if (ms) volta = setTimeout(function () { parado = false; pos = el.scrollLeft; }, ms); }
+  el.addEventListener("touchstart", function () { pausa(); }, { passive: true });
+  el.addEventListener("touchend", function () { pausa(2500); }, { passive: true });
+  el.addEventListener("mouseenter", function () { pausa(); });
+  el.addEventListener("mouseleave", function () { if (!arr) pausa(900); });
+  el.addEventListener("wheel", function () { pausa(2500); }, { passive: true });
+  el.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; arr = { x: e.clientX, s: el.scrollLeft }; el.classList.add("arrastando"); pausa(); });
+  window.addEventListener("pointermove", function (e) { if (arr) el.scrollLeft = arr.s - (e.clientX - arr.x); });
+  window.addEventListener("pointerup", function () { if (!arr) return; arr = null; el.classList.remove("arrastando"); pausa(2500); });
+  if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visivel = es[0].isIntersecting; }).observe(el); else visivel = true;
+  function passo(t) {
+    var dt = ant ? Math.min(50, t - ant) : 16; ant = t;
+    if (!calma && !parado && visivel) { pos += dt * 0.035; if (pos >= meio()) pos -= meio(); el.scrollLeft = pos; }
+    else { if (el.scrollLeft >= meio()) el.scrollLeft -= meio(); pos = el.scrollLeft; }
+    requestAnimationFrame(passo);
+  }
+  requestAnimationFrame(passo);
+})();
+</script></body>
 </html>
