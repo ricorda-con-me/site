@@ -73,17 +73,31 @@ h1.tit{font:700 26px/1.15 Fredoka,Nunito,sans-serif;color:var(--escuro);margin:1
 /* mockup de celular (15/10/2026, pedido do Vini: "aquele mockup que parece um celular"): mesma moldura da VSL da LP; o app real, mudo e em loop */
 .cel{position:relative;width:64%;max-width:280px;margin:16px auto 4px;aspect-ratio:9/16;border:8px solid #1d2433;border-radius:30px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.3);background:#fffaf4}
 .cel video{width:100%;height:100%;object-fit:cover;display:block}
+
+.chap{display:inline-block;font:800 12.5px/1.2 Nunito,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#a3294c;background:#fde6ea;border-radius:20px;padding:6px 13px;margin:18px 0 0}
+.tit{font:700 27px/1.15 Fredoka,Nunito,sans-serif;color:var(--escuro);margin:14px 0 6px}.tit em{font-style:normal;color:var(--cta2)}
+.chap + .tit{margin-top:10px}
+.trio{display:flex;justify-content:center;gap:8px;margin:14px 0 2px}
+.trio figure{margin:0;width:31%;max-width:150px}
+.trio img{display:block;width:100%;height:auto;border:5px solid var(--tinta);border-radius:16px;box-shadow:0 14px 26px -16px rgba(31,45,92,.55)}
+.trio figcaption{font:700 12.5px/1.2 Fredoka,Nunito,sans-serif;color:var(--escuro);margin-top:6px}
+.cards{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px;text-align:left}
+.cards li{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--linha);border-radius:16px;padding:10px 12px}
+.cards img{width:40px;height:40px;flex:none}
+.cards b{display:block;font:700 17px/1.2 Fredoka,Nunito,sans-serif;color:var(--escuro)}
+.cards span{display:block;font-size:14.5px;color:var(--suave);line-height:1.35;margin-top:1px}
+.emais{font-size:14px;color:var(--suave);margin:10px 2px 0;line-height:1.45;text-align:left}.emais b{color:var(--escuro)}
 </style></head><body>
 <main>
 <div class="ok" data-fluxo hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Aspetta: c'è un'opzione più piccola</span></div>
 <div class="ok" data-fora hidden><span>Ricorda con Me</span></div>
-<h1 class="tit">L'attività di ogni giorno<br><em>e i giochi per il pomeriggio</em></h1><p class="sub">Solo il Piano di 90 giorni e i Giochi da fare insieme.</p>
-<div class="cel"><video src="img/mock-ognigiorno.mp4" poster="img/mock-ognigiorno.jpg" width="540" height="960" autoplay muted loop playsinline preload="metadata" aria-label="Il Piano di 90 giorni e i Giochi aperti sul cellulare"></video></div>
-<ul class="lista-i"><li><span><b>Piano di 90 giorni</b>: due attività al giorno, già scelte, dalla più facile alla più difficile</span></li><li><span><b>Giochi da fare insieme</b>: la tombola con l'estrazione sul cellulare, il domino, il memory e gli indovinelli</span></li></ul>
+<h1 class="tit">Va bene. Allora solo <em>l'attività di ogni giorno, già scelta</em></h1><p class="sub">Un anno intero in ordine, più i giochi da fare insieme.</p>
+<div class="cel"><video src="img/mock-ognigiorno.mp4" poster="img/mock-ognigiorno.jpg" width="540" height="960" autoplay muted loop playsinline preload="metadata" aria-label="Il Calendario dell'anno e i Giochi aperti sul cellulare"></video></div>
+<ul class="lista-i"><li><span><b>Calendario dell'anno</b>: dalla più facile alla più difficile, mese per mese.</span></li><li><span><b>Giochi da fare insieme</b>: tombola con estrazione sul cellulare, domino, memory, indovinelli.</span></li></ul>
 <div class="acao" data-acao>
 <a class="bt" data-checkout="https://pay.hotmart.com/E108047230V?off=52hvo18j" href="https://pay.hotmart.com/E108047230V?off=52hvo18j" data-clique><b>Sì, voglio Ogni Giorno</b><span>Solo <em>9,90 €</em>: Ogni Giorno costa 24,90 €, tu paghi la differenza</span></a>
-<p class="pq">Pagamento unico, IVA inclusa, con carta o PayPal. Resta tutto nella tua area acquisti della Hotmart, insieme al kit.</p>
-<a class="nao" data-fluxo hidden href="https://app.ricordaconme.online/acesso/kit-Fyxf4CF7.html">No, grazie. Voglio aprire il mio kit</a>
+<p class="pq">Pagamento unico, IVA inclusa. Resta tutto nella tua area acquisti della Hotmart, insieme al kit.</p>
+<a class="nao" data-fluxo hidden href="https://app.ricordaconme.online/acesso/kit-Fyxf4CF7.html">No, grazie, va bene così</a>
 <a class="nao" data-fora hidden href="index.html">‹ Scopri Ricorda con Me</a>
 </div>
 <p class="pq rod"><a href="termini.html">Termini</a> · <a href="privacy.html">Privacy</a></p>
