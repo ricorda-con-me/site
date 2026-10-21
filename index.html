@@ -285,6 +285,21 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
 .avviso.on { opacity: 1; transform: none; }
 .avviso i { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--verde); color: #fff; display: grid; place-items: center; font: 900 17px Nunito, sans-serif; font-style: normal; }
 @media (prefers-reduced-motion: reduce) { .avviso { transition: none; } }
+/* repaginada 21/10/2026: carrossel das capas, bonus em linha, depoimentos */
+.carrossel.capas figure { flex-basis: 60%; }
+.carrossel.capas .capa-l { font-size: 14px; }
+.secao h3.paginas { font-size: 24px; color: var(--escuro); text-align: center; margin: 30px 0 4px; }
+.rosado h2.c { text-align: center; }
+.bonus-l { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.carrossel.depos { align-items: stretch; }
+.depo { flex: 0 0 84%; scroll-snap-align: center; margin: 0; background: #fff; border-radius: 18px; padding: 16px 18px; box-shadow: 0 4px 14px rgba(31,45,92,.09); display: flex; flex-direction: column; }
+.depo blockquote { margin: 0; font-size: 16px; line-height: 1.5; flex: 1; }
+.depo blockquote::before { content: "\201C"; display: block; font: 700 44px/0.9 Fredoka; color: var(--cta2); height: 22px; }
+.depo figcaption { display: flex; align-items: center; gap: 10px; margin-top: 12px; font: 700 17px Fredoka; color: var(--escuro); text-align: left; }
+.depo .av { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--rosado); color: var(--rosa-txt); display: grid; place-items: center; font: 700 16px Fredoka; }
+.depo .stelle { color: var(--dourado); font-size: 17px; letter-spacing: 1px; line-height: 1; }
+.carrossel.depos.esteira .depo { flex-basis: 78%; }
+@media (min-width: 700px) { .depo { flex-basis: 46%; } .carrossel.capas figure { flex-basis: 30%; } }
 </style>
 <!-- visite del painel (funil-montar, rastreio-e-capi 2.6): lega la vendita alla visita con lo xcod della Hotmart -->
 <script async src="https://painel.labofertas.com/api/lp/script?o=2026-10-ricorda-con-me"></script>
@@ -329,7 +344,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   <p class="garant-mini"><span>✓ Accesso immediato via email</span><span>✓ Garanzia 15 giorni</span><span>✓ Prodotto digitale da stampare: nessuna spedizione</span></p>
 </header>
 
-<!-- 2. IL DOLORE -->
+<!-- 2. MECCANISMO: IL PROBLEMA -->
 <section class="escuro">
   <div class="w">
     <span class="chapeu">IN SALA, OGNI GIORNO</span>
@@ -344,56 +359,49 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   </div>
 </section>
 
-<!-- 3. LA CAUSA: IL CALENDARIO PRIMA DELLA SCHEDA -->
+<!-- 2. MECCANISMO: LA SOLUZIONE -->
 <section class="rosado">
   <div class="w">
-    <span class="chapeu">PERCHÉ SUCCEDE</span>
-    <h2>Avere mille schede non basta, se la sessione la devi mettere insieme tu.</h2>
-    <p>Una sessione non è una scheda. È un modo per cominciare e scaldarsi, qualcosa per la testa, un gioco per chiudere insieme. E deve funzionare con tutto il gruppo, ogni giorno: è questo il lavoro che ti porta via le serate. Con le schede sciolte questo lavoro resta tutto a chi conduce: scegliere, abbinare, adattare. Tutti i giorni.</p>
-    <h3 class="liv">Per questo Ricorda con Me <span class="rosa">parte dal calendario</span></h3>
+    <h2>Per questo Ricorda con Me <span class="rosa">parte dal calendario</span></h2>
     <p>Abbiamo messo in fila 365 sessioni, una per ogni giorno dell'anno, ognuna già completa. Non un mese di sessioni: un anno intero. E le schede le abbiamo fatte in tre livelli di difficoltà, così non devi adattare niente: stampi il livello giusto per ognuno.</p>
+    <div class="giorno">
+      <div class="gt">Giorno 2<small>Livello 1</small></div>
+      <div class="gp"><span class="n">1</span><div><b>Per cominciare, il riscaldamento</b><span>Mani e dita: una routine del Corpo attivo, da seduti, di circa 10 minuti.</span></div></div>
+      <div class="gp"><span class="n">2</span><div><b>Per la testa, due schede</b><span>Proverbi (Linguaggio e parole) e Sequenze di numeri (Ragionamento e logica): da due quaderni diversi, perché non si allena sempre la stessa cosa.</span></div></div>
+      <div class="gp"><span class="n">3</span><div><b>Per chiudere, un gioco insieme</b><span>Tombola delle figure: tutti allo stesso tavolo.</span></div></div>
+    </div>
     <div class="livelli">
       <img width="480" height="581" loading="lazy" decoding="async" src="img/livello-1.jpg" alt="Labirinto, Livello 1">
       <img width="480" height="581" loading="lazy" decoding="async" src="img/livello-2.jpg" alt="Labirinto, Livello 2">
       <img width="480" height="581" loading="lazy" decoding="async" src="img/livello-3.jpg" alt="Labirinto, Livello 3">
     </div>
     <p class="livelli-leg">Il labirinto, nei tre livelli</p>
-    <div class="lado">
-      <div class="card-ok"><span class="v">✓</span><div><b>In sala.</b> Stampi, distribuisci, e il gruppo lavora sullo stesso esercizio. Tu conduci, invece di adattare.</div></div>
-      <div class="card-ok"><span class="v">✓</span><div><b>A casa.</b> Il pomeriggio ha già il suo programma, e non devi inventarlo tu.</div></div>
-    </div>
   </div>
 </section>
 
-<!-- 4. COSA RICEVI -->
+<!-- 3. COSA RICEVI: IL CARROSELLO -->
 <section class="secao" id="kit">
   <div class="w">
     <p style="text-align:center;margin:0"><span class="chapeu">COSA RICEVI</span></p>
     <h2 style="margin-top:12px">1.008 schede in 8 quaderni, <span class="rosa">e il calendario che le mette in fila</span></h2>
     <p class="intro">Ogni quaderno allena una capacità diversa e ha 126 schede in tre livelli: dal Livello 1, per cominciare, al Livello 3, per chi ama le sfide. Le soluzioni sono sempre incluse.</p>
-    <div class="capas2">
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-memoria.jpg" alt="Quaderno Memoria"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Memoria:</b> liste di parole, immagini, l'ordine delle cose, dove si trovavano gli oggetti e piccoli racconti da ricordare.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-attenzione.jpg" alt="Quaderno Attenzione e concentrazione"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Attenzione e concentrazione:</b> simboli da barrare, quello diverso, immagini da contare, lettere da contare, numeri doppi e linee da seguire.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-linguaggio.jpg" alt="Quaderno Linguaggio e parole"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Linguaggio e parole:</b> crucipuzzle, proverbi, lettere mancanti e mescolate, categorie, sillabe e contrari.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-ragionamento.jpg" alt="Quaderno Ragionamento e logica"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Ragionamento e logica:</b> sequenze di numeri, sudoku, l'intruso, serie di figure, piramidi di numeri e problemi di logica.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-percezione.jpg" alt="Quaderno Percezione visiva"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Percezione visiva:</b> forme uguali, disegni da copiare e da completare allo specchio, ombre, figure sovrapposte e differenze da trovare.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-orientamento.jpg" alt="Quaderno Orientamento nel tempo e nello spazio"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Orientamento nel tempo e nello spazio:</b> orologi, calendari da leggere e da completare, battaglia navale, cose da mettere in ordine e percorsi sulla mappa.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-conti.jpg" alt="Quaderno I conti di tutti i giorni"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>I conti di tutti i giorni:</b> operazioni, la spesa, monete da contare, il resto giusto, prezzi da confrontare e problemi di tutti i giorni, tutto in euro.</p></div>
-      <div><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-coordinazione.jpg" alt="Quaderno Coordinazione e tratto"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Coordinazione e tratto:</b> labirinti, puntini da unire, tratteggi da ripassare, motivi da continuare, numeri da unire in ordine e strade da percorrere.</p></div>
+    <div class="carrossel capas esteira" tabindex="0" role="region" aria-label="Gli 8 quaderni, scorri per vederli tutti">
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-memoria.jpg" alt="Quaderno Memoria"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Memoria:</b> liste di parole, immagini, l'ordine delle cose, dove si trovavano gli oggetti e piccoli racconti da ricordare.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-attenzione.jpg" alt="Quaderno Attenzione e concentrazione"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Attenzione e concentrazione:</b> simboli da barrare, quello diverso, immagini da contare, lettere da contare, numeri doppi e linee da seguire.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-linguaggio.jpg" alt="Quaderno Linguaggio e parole"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Linguaggio e parole:</b> crucipuzzle, proverbi, lettere mancanti e mescolate, categorie, sillabe e contrari.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-ragionamento.jpg" alt="Quaderno Ragionamento e logica"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Ragionamento e logica:</b> sequenze di numeri, sudoku, l'intruso, serie di figure, piramidi di numeri e problemi di logica.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-percezione.jpg" alt="Quaderno Percezione visiva"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Percezione visiva:</b> forme uguali, disegni da copiare e da completare allo specchio, ombre, figure sovrapposte e differenze da trovare.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-orientamento.jpg" alt="Quaderno Orientamento nel tempo e nello spazio"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Orientamento nel tempo e nello spazio:</b> orologi, calendari da leggere e da completare, battaglia navale, cose da mettere in ordine e percorsi sulla mappa.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-conti.jpg" alt="Quaderno I conti di tutti i giorni"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>I conti di tutti i giorni:</b> operazioni, la spesa, monete da contare, il resto giusto, prezzi da confrontare e problemi di tutti i giorni, tutto in euro.</p></figure>
+      <figure><div class="capa"><img width="794" height="1123" loading="lazy" decoding="async" src="img/capa-coordinazione.jpg" alt="Quaderno Coordinazione e tratto"><span class="n">126 schede · 3 livelli</span></div><p class="capa-l"><b>Coordinazione e tratto:</b> labirinti, puntini da unire, tratteggi da ripassare, motivi da continuare, numeri da unire in ordine e strade da percorrere.</p></figure>
     </div>
+    <p class="dica-arr">‹ scorri per vedere gli 8 quaderni ›</p>
     <h3 class="tres">E tre parti che trasformano le schede in sessioni</h3>
     <div class="ex"><img width="256" height="256" loading="lazy" decoding="async" src="img/calendar.png" alt=""><div><h3>Il Calendario dell'anno</h3><p>365 sessioni pronte, una per ogni giorno. Ognuna ha il riscaldamento, due schede da due quaderni diversi e un gioco per chiudere. Ogni quattro mesi il calendario sale di livello.</p></div></div>
     <div class="ex"><img width="256" height="256" loading="lazy" decoding="async" src="img/person_in_lotus_position.png" alt=""><div><h3>Corpo attivo</h3><p>20 esercizi dolci da fare da seduti, raccolti in 4 routine di circa 10 minuti. Ogni esercizio è spiegato in 3 passi, con le attenzioni da avere.</p></div></div>
     <div class="ex"><img width="256" height="256" loading="lazy" decoding="async" src="img/game_die.png" alt=""><div><h3>Giochi da fare insieme</h3><p>6 giochi da stampare: la tombola dei numeri, la tombola delle figure, il domino, il memory, gli indovinelli e il gioco delle categorie. Per la tombola, i numeri li estrai dal cellulare.</p></div></div>
-  </div>
-</section>
-
-<!-- 5. PROVA: LE PAGINE VERE -->
-<section class="secao" style="padding-top: 0">
-  <div class="w">
-    <p style="text-align:center;margin:0"><span class="chapeu">SFOGLIA LE PAGINE VERE</span></p>
-    <h2 style="margin-top:12px">Niente roba da bambini</h2>
-    <p class="intro">Schede che proponi a un gruppo di adulti senza imbarazzo: una pagina di ogni quaderno, così come la stampi, con i proverbi, la spesa in euro e le città d'Italia.</p>
+    <p style="text-align:center;margin:30px 0 0"><span class="chapeu">SFOGLIA LE PAGINE VERE</span></p>
+    <h3 class="paginas" style="margin-top:10px">Niente roba da bambini</h3>
     <div class="carrossel esteira" tabindex="0" role="region" aria-label="Esempi di schede, scorri per vederne altre">
       <figure><img width="794" height="1123" src="img/folha-conti-2.jpg" alt="Esempio di scheda: La spesa, in euro"><figcaption>La spesa, in euro</figcaption></figure>
       <figure><img width="794" height="1123" src="img/folha-linguaggio-2.jpg" alt="Esempio di scheda: Proverbi"><figcaption>Proverbi</figcaption></figure>
@@ -412,44 +420,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   </div>
 </section>
 
-<!-- 6. COME FUNZIONA -->
+<!-- 4. I BONUS -->
 <section class="rosado">
   <div class="w">
-    <span class="chapeu">COME FUNZIONA</span>
-    <h2>Dal calendario alla sala, in tre passi</h2>
-    <ol class="passos3">
-      <li><b>Apri la tua piattaforma.</b> Dal cellulare o dal computer, con il link che ricevi via email.</li>
-      <li><b>Scegli la sessione di oggi, o una scheda.</b> La sessione del giorno è già pronta. Se ti serve altro, scegli per quaderno e per livello.</li>
-      <li><b>Stampa e vai.</b> Con un tocco stampi la sessione del giorno, o solo la scheda che ti serve, in tutte le copie che vuoi. Oppure scarichi tutto in PDF e lo tieni sul computer della struttura.</li>
-    </ol>
-    <a class="cta verde" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Stampo la sessione di domani</a>
-    <p class="seguro">🔒 Accesso subito dopo il pagamento · Garanzia 15 giorni</p>
-  </div>
-</section>
-
-<!-- 7. UNA GIORNATA DEL CALENDARIO -->
-<section class="secao">
-  <div class="w">
-    <p style="text-align:center;margin:0"><span class="chapeu">UNA GIORNATA DEL CALENDARIO</span></p>
-    <h2 style="margin-top:12px">Ogni giorno, la sessione è già decisa</h2>
-    <div class="giorno">
-      <div class="gt">Giorno 2<small>Livello 1</small></div>
-      <div class="gp"><span class="n">1</span><div><b>Per cominciare, il riscaldamento</b><span>Mani e dita: una routine del Corpo attivo, da seduti, di circa 10 minuti.</span></div></div>
-      <div class="gp"><span class="n">2</span><div><b>Per la testa, due schede</b><span>Proverbi (Linguaggio e parole) e Sequenze di numeri (Ragionamento e logica): da due quaderni diversi, perché non si allena sempre la stessa cosa.</span></div></div>
-      <div class="gp"><span class="n">3</span><div><b>Per chiudere, un gioco insieme</b><span>Tombola delle figure: tutti allo stesso tavolo.</span></div></div>
-    </div>
-    <p class="intro" style="margin-top:16px">Ogni quattro mesi le schede salgono di livello. E se al tavolo c'è chi va più veloce, stampi lo stesso esercizio un livello sopra.</p>
-    <div class="card-ok"><span class="v">✓</span><div><b>A casa</b> è la stessa sessione, al tavolo della cucina: un po' di movimento, due schede con il caffè, e la tombola quando arrivano i nipoti.</div></div>
-  </div>
-</section>
-
-<!-- 8. I BONUS -->
-<section class="rosado">
-  <div class="w">
-    <h3 class="bon">E cinque bonus, per chi lavora con un gruppo e per chi assiste a casa</h3>
-    <div class="bonus-g">
-      <div class="bg"><div class="img"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-guida-gruppo.jpg" alt="Scheda del bonus: Come usare le schede con un gruppo"></div><div class="tx"><p class="num">BONUS 01 · VALORE 3,00 €</p><h3>Come usare le schede con un gruppo</h3><p>I passi per condurre la sessione con un gruppo dai livelli diversi, e come adattarla a chi ci vede poco, a chi ha le mani che tremano o a chi non vuole partecipare.</p></div></div>
-      <div class="bg"><div class="img"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-registro-attivita.jpg" alt="Scheda del bonus: Scheda di registro delle attività"></div><div class="tx"><p class="num">BONUS 02 · VALORE 2,00 €</p><h3>Scheda di registro delle attività</h3><p>Un foglio per ogni persona e uno per ogni sessione di gruppo: chi ha fatto cosa, a che livello e com'è andata. Utile anche per aggiornare il PAI.</p></div></div>
+    <h2 class="c">E cinque bonus, per chi lavora con un gruppo e per chi assiste a casa</h2>
+    <div class="bonus-l">
+      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-guida-gruppo.jpg" alt="Scheda del bonus: Come usare le schede con un gruppo"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 01 · VALORE 3,00 €</p><h3>Come usare le schede con un gruppo</h3><p>I passi per condurre la sessione con un gruppo dai livelli diversi, e come adattarla a chi ci vede poco, a chi ha le mani che tremano o a chi non vuole partecipare.</p></div></div>
+      <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-registro-attivita.jpg" alt="Scheda del bonus: Scheda di registro delle attività"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 02 · VALORE 2,00 €</p><h3>Scheda di registro delle attività</h3><p>Un foglio per ogni persona e uno per ogni sessione di gruppo: chi ha fatto cosa, a che livello e com'è andata. Utile anche per aggiornare il PAI.</p></div></div>
       <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-crucipuzzle-italia.jpg" alt="Scheda del bonus: Crucipuzzle d'Italia"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 03 · VALORE 1,00 €</p><h3>Crucipuzzle d'Italia</h3><p>Città, cucina, feste e tradizioni: crucipuzzle con i temi di casa nostra.</p></div></div>
       <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-proverbi.jpg" alt="Scheda del bonus: Proverbi da completare"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 04 · VALORE 1,00 €</p><h3>Proverbi da completare</h3><p>I proverbi di sempre, da completare e da raccontare. Con le soluzioni.</p></div></div>
       <div class="bp"><img width="794" height="1123" loading="lazy" decoding="async" src="img/bonus-schede-assistenza.jpg" alt="Scheda del bonus: Schede di assistenza"><div><p class="num" style="color:var(--cta2);font-weight:800;margin:0">BONUS 05 · VALORE 1,00 €</p><h3>Schede di assistenza</h3><p>Le attenzioni di ogni giorno, i contatti di emergenza e la scheda della salute da portare alle visite.</p></div></div>
@@ -457,35 +434,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   </div>
 </section>
 
-<!-- 9. PER CHI È, E PER CHI NON È -->
+<!-- 5. PROVA SOCIALE -->
 <section class="secao">
   <div class="w">
-    <h2>È per te se...</h2>
-    <div class="sino">
-      <div class="si"><p class="t">Sì, fa per te</p><ul>
-        <li>Fai animazione in RSA, in casa di riposo o al centro diurno: animatrice, educatrice, OSS.</li>
-        <li>Il tuo gruppo ha livelli diversi e vuoi che al tavolo lavorino tutti.</li>
-        <li>Assisti mamma o papà a casa e vuoi tenerli impegnati con qualcosa che non sia da bambini.</li>
-        <li>Vuoi sapere già oggi cosa proporre domani, senza perdere tempo a cercare.</li></ul></div>
-      <div class="no"><p class="t">Non fa per te</p><ul>
-        <li>Cerchi un corso: qui ci sono sessioni e schede pronte, non lezioni.</li>
-        <li>Cerchi una terapia o un programma riabilitativo: è un passatempo per allenare la mente, non sostituisce il medico né l'équipe.</li>
-        <li>Vuoi un libro spedito a casa: è un prodotto digitale, lo stampi tu.</li>
-        <li>Non hai modo di stampare: le schede si possono fare anche sullo schermo, ma il kit è pensato per la carta.</li></ul></div>
+    <p style="text-align:center;margin:0"><span class="chapeu">CHI LO USA</span></p>
+    <h2 style="margin-top:12px">Famiglie e chi assiste, con le loro parole.</h2>
+    <div class="carrossel depos esteira" tabindex="0" role="region" aria-label="Cosa dicono i clienti, scorri per leggerli tutti">
+      <figure class="depo"><blockquote>Ho comprato il kit per mio padre e devo dire che gli è piaciuto. Gli piace avere qualcosa da fare durante il pomeriggio, e alcune attività lo tengono impegnato senza annoiarlo.</blockquote><figcaption><span class="av">M</span>Marco<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
+      <figure class="depo"><blockquote>Lavoro come assistente per una signora anziana e cercavo delle attività semplici da fare insieme. Questo kit mi ha dato qualche idea in più per passare il tempo con lei in modo piacevole.</blockquote><figcaption><span class="av">A</span>Alessia<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
+      <figure class="depo"><blockquote>L'ho preso per mia madre, soprattutto per i momenti in cui resta a casa. Ci sono attività diverse e possiamo scegliere quelle che le piacciono di più. Per noi è stato un acquisto utile.</blockquote><figcaption><span class="av">S</span>Simone<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
+      <figure class="depo"><blockquote>Mi occupo di una signora anziana e volevo trovare qualcosa di pratico da proporle durante la giornata. Il kit è facile da usare e alcune attività sono diventate parte della nostra routine.</blockquote><figcaption><span class="av">F</span>Federica<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
+      <figure class="depo"><blockquote>Ho acquistato il kit per mio padre perché volevo proporgli qualcosa di diverso dalla televisione. Non fa tutto ogni giorno, ma quando trova un'attività che gli interessa, si mette volentieri a farla.</blockquote><figcaption><span class="av">D</span>Davide<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
+      <figure class="depo"><blockquote>Lavoro con persone anziane e avere delle attività già pronte è comodo. Posso scegliere quelle più adatte alla persona e al momento della giornata. È una risorsa semplice, ma utile nel mio lavoro.</blockquote><figcaption><span class="av">C</span>Claudia<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
+      <figure class="depo"><blockquote>Ho preso il kit per mia nonna e lo usiamo quando vado a trovarla. È un modo carino per fare qualcosa insieme, senza dover sempre pensare a cosa inventarci. Sono contento di averlo acquistato.</blockquote><figcaption><span class="av">S</span>Stefano<span class="stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></figcaption></figure>
     </div>
+    <p class="dica-arr">‹ scorri per leggerli tutti ›</p>
   </div>
 </section>
 
-<!-- 10. GARANZIA -->
-<section class="garantia">
-  <div class="w">
-    <div class="selo-g">PROVALO PER<b>15</b>GIORNI</div>
-    <h2>Prova quindici sessioni, poi decidi</h2>
-    <p>Stampa le sessioni dei primi quindici giorni e portale in sala, o al tavolo di casa. Se non fanno per te, per qualsiasi motivo, entro 15 giorni ti restituiamo tutti i soldi, senza domande.</p>
-  </div>
-</section>
-
-<!-- 11. TUTTO QUELLO CHE RICEVI E IL PREZZO -->
+<!-- 6. OFFERTA -->
 <section class="preco" id="comprar">
   <div class="w">
     <div class="faixa-rosa">TUTTO QUELLO CHE RICEVI<small>PAGAMENTO UNICO · ACCESSO SUBITO</small></div>
@@ -505,15 +472,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
       <p style="margin:0;font-weight:800">Oggi</p>
       <p class="valor">14,90 €</p>
       <p class="unico">IVA inclusa · pagamento unico, nessun abbonamento</p>
-      <ul class="checks">
-        <li>Più di un anno di attività già pronte</li>
-        <li>365 sessioni, una per ogni giorno dell'anno</li>
-        <li>Ogni esercizio in tre livelli, soluzioni comprese</li>
-        <li>Le stampi quante volte vuoi, per una persona o per tutto il gruppo</li>
-        <li>5 bonus, tra cui la guida per il gruppo e il registro per il PAI</li>
-        <li>15 giorni per provarlo</li>
-      </ul>
-      <p class="depois">E domani, quando entri in sala, la sessione è già stampata.</p>
       <a class="cta verde" href="https://pay.hotmart.com/D108046898M?checkoutMode=10" data-checkout>Sì, voglio tutto il kit</a>
       <div class="selos"><span>🔒 Pagamento sicuro</span><span>✓ Accesso immediato</span><span>🛡️ 15 giorni per provarlo</span></div>
       <p class="metodos">Pagamento con carta o PayPal</p>
@@ -521,30 +479,27 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
   </div>
 </section>
 
-<!-- 12. FAQ -->
+<!-- 7. GARANZIA -->
+<section class="garantia">
+  <div class="w">
+    <div class="selo-g">PROVALO PER<b>15</b>GIORNI</div>
+    <h2>Prova quindici sessioni, poi decidi</h2>
+    <p>Stampa le sessioni dei primi quindici giorni e portale in sala, o al tavolo di casa. Se non fanno per te, per qualsiasi motivo, entro 15 giorni ti restituiamo tutti i soldi, senza domande.</p>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
 <section class="faq">
   <div class="w">
     <h2>Domande frequenti</h2>
     <details><summary>In cosa è diverso dalle schede gratis che trovo online?</summary><p>Le schede gratis sono pagine sciolte: la sessione la metti insieme tu, e spesso c'è un livello solo. Qui le 365 sessioni sono già messe in fila, giorno per giorno, e ogni esercizio ha tre livelli, con le soluzioni. Tutto nello stesso posto, da stampare quando serve.</p></details>
     <details><summary>Funziona con un gruppo dai livelli diversi?</summary><p>Sì. Tutti fanno lo stesso esercizio, ognuno al suo livello. E tu non adatti niente: stampi il livello giusto per ognuno. Il bonus «Come usare le schede con un gruppo» spiega come condurre la sessione.</p></details>
-    <details><summary>Quanto tempo serve per preparare la sessione?</summary><p>Il tempo di aprire la sessione del giorno e stamparla. Il resto è già deciso: cosa fare, in che ordine, e con quale gioco chiudere.</p></details>
-    <details><summary>Le schede sono da bambini?</summary><p>No. Sono giochi da grandi, con proverbi, la spesa in euro e le città d'Italia. Il Livello 3 è una sfida vera anche per chi è lucidissimo.</p></details>
-    <details><summary>Come ricevo il kit?</summary><p>Subito dopo il pagamento ti arriva via email l'accesso alla tua piattaforma. La apri dal cellulare o dal computer: da lì scegli, stampi, o scarichi tutto in PDF.</p></details>
+            <details><summary>Come ricevo il kit?</summary><p>Subito dopo il pagamento ti arriva via email l'accesso alla tua piattaforma. La apri dal cellulare o dal computer: da lì scegli, stampi, o scarichi tutto in PDF.</p></details>
     <details><summary>Posso stamparlo per tutta la struttura?</summary><p>Sì, tutte le volte che servono, per le persone che segui, in RSA, al centro diurno o a domicilio. Non è permesso rivenderlo né condividere l'accesso.</p></details>
     <details><summary>Serve una stampante a colori?</summary><p>No, le schede si leggono bene anche in bianco e nero.</p></details>
-    <details><summary>Si può usare senza stampare?</summary><p>Sì, le schede si possono fare anche sullo schermo. Ma il kit è pensato per la carta.</p></details>
-    <details><summary>Serve internet?</summary><p>Per aprire la piattaforma e scaricare i PDF, sì. Una volta scaricati, li stampi anche senza connessione.</p></details>
-    <details><summary>Gli esercizi del Corpo attivo sono sicuri?</summary><p>Sono esercizi dolci, da fare da seduti, e ognuno dice a cosa fare attenzione. Prima di cominciare, parlane con il medico di famiglia o con l'équipe della struttura.</p></details>
+            <details><summary>Gli esercizi del Corpo attivo sono sicuri?</summary><p>Sono esercizi dolci, da fare da seduti, e ognuno dice a cosa fare attenzione. Prima di cominciare, parlane con il medico di famiglia o con l'équipe della struttura.</p></details>
     <details><summary>Va bene per chi ha l'Alzheimer o la demenza?</summary><p>Le schede sono un passatempo per allenare la mente, e il Livello 1 è fatto per cominciare con calma. Non sono una terapia e non sostituiscono il parere del medico.</p></details>
     <details><summary>C'è un abbonamento?</summary><p>No. Si paga una volta sola: nessun rinnovo, nessun addebito mensile.</p></details>
-  </div>
-</section>
-
-<!-- 13. FECHO -->
-<section class="fecho">
-  <div class="w">
-    <p>Domani entri in sala con la sessione già stampata. E dopodomani anche.</p>
-    <a class="cta" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Voglio le sessioni pronte</a>
   </div>
 </section>
 
@@ -670,13 +625,13 @@ var PIXEL_ID = "1543859487541888";  // dataset "Recorda Comigo" (BM canarimtech)
    visivel; para ao toque, ao passar o mouse ou ao arrastar, e volta depois de uns segundos. Sem movimento para quem pediu
    reduzir movimento no aparelho. No computador, arrasta com o mouse. */
 (function () {
-  var el = document.querySelector(".carrossel.esteira"); if (!el) return;
+  document.querySelectorAll(".carrossel.esteira").forEach(function (el) {
   var calma = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   Array.prototype.slice.call(el.children).forEach(function (f) {
     var c = f.cloneNode(true); c.setAttribute("aria-hidden", "true");
     c.querySelectorAll("img").forEach(function (i) { i.alt = ""; }); el.appendChild(c);
   });
-  var meio = function () { return el.scrollWidth / 2; };
+  var meio = function () { var m = el.children.length / 2; return el.children[m].offsetLeft - el.children[0].offsetLeft; };
   var parado = false, volta = 0, visivel = false, pos = 0, ant = 0, arr = null;
   function pausa(ms) { parado = true; clearTimeout(volta); if (ms) volta = setTimeout(function () { parado = false; pos = el.scrollLeft; }, ms); }
   el.addEventListener("touchstart", function () { pausa(); }, { passive: true });
@@ -695,6 +650,7 @@ var PIXEL_ID = "1543859487541888";  // dataset "Recorda Comigo" (BM canarimtech)
     requestAnimationFrame(passo);
   }
   requestAnimationFrame(passo);
+  });
 })();
 </script><div class="avviso" role="status" aria-live="polite"><i aria-hidden="true">&#10003;</i><span></span></div>
 <script>
