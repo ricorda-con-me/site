@@ -241,6 +241,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
 .pilha td { padding: 7px 4px; border-bottom: 1px dashed #ecdcd6; vertical-align: top; } .pilha td:last-child { text-align: right; white-space: nowrap; font-weight: 800; color: var(--suave); }
 .card-preco .tot { font: 700 20px Fredoka; color: var(--escuro); margin: 4px 0 8px; } .card-preco .tot s { color: var(--suave); }
 .barra .pr s { font: 800 14px Nunito; color: var(--suave); }
+/* 20/10/2026 (Vini: "a VSL tem que ser o principal, titulo e subtitulo certeiros e logo ja a VSL, na primeira tela") */
+.hero.topo { padding: 10px 18px 4px; }
+.hero .logo { font-size: 18px; margin-bottom: 4px; gap: 6px; } .hero .logo img { width: 30px; height: 30px; }
+.hero h1 { font-size: 29px; margin: 4px 0 6px; line-height: 1.1; }
+.hero .sub { font-size: 16px; line-height: 1.4; margin: 0 0 10px; }
+.hero .vsl { margin: 0 auto 12px; }
+@media (min-width: 700px) { .hero h1 { font-size: 40px; } }
+@media (max-width: 400px) { .hero h1 { font-size: 27px; margin: 2px 0 6px; } .hero .sub { font-size: 15px; margin: 0 0 8px; } }
+.hero .mec { font-size: 15.5px; line-height: 1.45; color: var(--tinta); margin: 0 0 10px; }
 
 /* VSL de pagina, padrao da fabrica (20/10/2026, o modelo da LP do Ingles con Tito). Cores por oferta nas variaveis. */
 .vsl{--vsl-fundo:#EFE3CC;--vsl-tinta:#3D3355;--vsl-vidro:rgba(61,51,85,.68);--vsl-acento:#F29A3A;--vsl-fonte:Nunito,system-ui,sans-serif;
@@ -282,9 +291,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
 <!-- 1. HERO (20/10/2026: reformulacao; sem VSL, as folhas na frente) -->
 <header class="w topo hero">
   <div class="logo"><img width="256" height="256" src="img/icone.png" alt="">Ricorda <span class="me">con Me</span></div><br>
-  <span class="pilula">1.008 SCHEDE DA STAMPARE · 365 SESSIONI PRONTE</span>
-  <h1>Fai animazione in RSA o in casa di riposo? Domani sai già cosa proporre al gruppo. E hai <span class="rosa">più di un anno di attività</span> già pronte.</h1>
-  <p class="sub">Apri il calendario, stampi la sessione del giorno ed entri in sala: riscaldamento, due schede e un gioco, già messi in fila. E <b class="rosa">ogni esercizio ha tre livelli</b>: stampi quello giusto per ognuno, e non devi adattare niente.</p>
+  <h1><span class="rosa">Più di un anno di attività,</span> già pronte.</h1>
+  <p class="sub">Domani sai già cosa proporre: 1.008 schede e 365 sessioni da stampare.</p>
   <div class="vsl" id="vsl">
     <video id="vVsl" src="img/vsl-v3.mp4" poster="img/vsl-v3-poster.jpg" muted playsinline preload="none" width="720" height="900"></video>
     <button class="som" id="bSom" type="button">
@@ -301,6 +309,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
     </div>
     <div class="prog" id="vslProg"><i id="vslProgI"></i></div>
   </div>
+  <p class="mec">Apri il calendario, stampi la sessione del giorno ed entri in sala. E ogni esercizio ha tre livelli: al tavolo lavorano tutti.</p>
   <p class="preco-hero"><s>49,90 €</s> <b>14,90 €</b><span>pagamento unico, nessun abbonamento</span></p>
   <a class="cta" href="https://pay.hotmart.com/D108046898M?checkoutMode=10">Voglio le sessioni pronte</a>
   <p class="garant-mini"><span>✓ Accesso immediato via email</span><span>✓ Garanzia 15 giorni</span><span>✓ Prodotto digitale da stampare: nessuna spedizione</span></p>
