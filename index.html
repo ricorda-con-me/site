@@ -279,6 +279,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .carrossel:focus-v
 .vsl .prog:before{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.5)}
 .vsl .prog i{position:absolute;left:0;bottom:0;height:5px;width:0;background:var(--vsl-acento)}
 .vsl{--vsl-fundo:#efe7dc;--vsl-tinta:#1f2d5c;--vsl-vidro:rgba(31,45,92,.7);--vsl-acento:#d94468;--vsl-fonte:Nunito,system-ui,sans-serif}
+/* avviso di acquisto: ogni 10-20 s, a sinistra o a destra, sopra la barra fissa */
+.avviso { position: fixed; bottom: 92px; z-index: 10; display: flex; align-items: center; gap: 10px; max-width: calc(100% - 24px); background: #fff; color: var(--tinta); border-radius: 14px; box-shadow: 0 8px 26px rgba(0,0,0,.18); padding: 10px 16px 10px 10px; font: 700 16px Nunito, system-ui, sans-serif; opacity: 0; transform: translateY(16px); transition: opacity .35s, transform .35s; pointer-events: none; }
+.avviso.sx { left: 12px; } .avviso.dx { right: 12px; }
+.avviso.on { opacity: 1; transform: none; }
+.avviso i { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--verde); color: #fff; display: grid; place-items: center; font: 900 17px Nunito, sans-serif; font-style: normal; }
+@media (prefers-reduced-motion: reduce) { .avviso { transition: none; } }
 </style>
 <!-- visite del painel (funil-montar, rastreio-e-capi 2.6): lega la vendita alla visita con lo xcod della Hotmart -->
 <script async src="https://painel.labofertas.com/api/lp/script?o=2026-10-ricorda-con-me"></script>
@@ -681,6 +687,26 @@ var PIXEL_ID = "1543859487541888";  // dataset "Recorda Comigo" (BM canarimtech)
     requestAnimationFrame(passo);
   }
   requestAnimationFrame(passo);
+})();
+</script><div class="avviso" role="status" aria-live="polite"><i aria-hidden="true">&#10003;</i><span></span></div>
+<script>
+(function () {
+  var nomi = ["Francesco","Sofia","Leonardo","Giulia","Alessandro","Aurora","Lorenzo","Ginevra","Andrea","Vittoria","Mattia","Beatrice","Matteo","Alice","Gabriele","Ludovica","Tommaso","Emma","Riccardo","Matilde","Giuseppe","Anna","Antonio","Francesca","Giovanni","Martina","Edoardo","Chiara","Pietro","Elena"];
+  var el = document.querySelector(".avviso"), txt = el.querySelector("span"), fila = [];
+  function prossimo() {
+    if (!fila.length) { fila = nomi.slice(); for (var i = fila.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = fila[i]; fila[i] = fila[j]; fila[j] = t; } }
+    return fila.pop();
+  }
+  function mostra() {
+    txt.textContent = prossimo() + " ha acquistato";
+    el.className = "avviso " + (Math.random() < .5 ? "sx" : "dx");
+    void el.offsetWidth;
+    el.classList.add("on");
+    setTimeout(function () { el.classList.remove("on"); }, 4000);
+    programma();
+  }
+  function programma() { setTimeout(mostra, 10000 + Math.random() * 10000); }
+  programma();
 })();
 </script></body>
 </html>
